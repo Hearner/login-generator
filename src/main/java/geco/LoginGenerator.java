@@ -38,7 +38,7 @@ public class LoginGenerator {
         String n = deAccent(nom.substring(0,3).toUpperCase());
         String login = p+n ;
         if (loginService.loginExists(login)) {
-            login = login + "1" ;
+            login = login + loginService.findAllLoginsStartingWith(login).size() + 1 ;
         }
         loginService.addLogin(login);
         return login;
@@ -56,7 +56,10 @@ public class LoginGenerator {
         return pattern.matcher(nfdNormalizedString).replaceAll("");
     }
 
-
+    /**
+     * Utilisé pour les tests.
+     */
+    public LoginService getloginService() { return this.loginService; }
 
 
 
