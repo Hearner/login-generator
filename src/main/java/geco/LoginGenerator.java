@@ -56,7 +56,10 @@ public class LoginGenerator {
         return pattern.matcher(nfdNormalizedString).replaceAll("");
     }
 
-
+    /**
+     * Utilisé pour les tests.
+     */
+    public LoginService getloginService() { return this.loginService; }
 
 
 
