@@ -18,4 +18,17 @@ public class LoginGeneratorTest {
         assertTrue("The new PDUR should be added into the login list",
                 loginGenerator.getloginService().findAllLoginsStartingWith("PDUR").size() > 0);
     }
+
+    @Test
+    public void generateLoginFromNomAndPrenomAlreadyExist() {
+        LoginService loginService = new LoginService(new String[] {"JROL",
+                "BPER", "CGUR", "JDU", "JRAL", "JRAL1"});
+        LoginGenerator loginGenerator = new LoginGenerator(loginService);
+
+        // 2 JRAL already exist
+        assertFalse("John Ralling should not return JRAL",
+                loginGenerator.generateLoginForNomAndPrenom("Ralling", "John").equals("JRAL"));
+        assertTrue("The new JRAL2 should be added into the login list",
+                loginGenerator.getloginService().findAllLoginsStartingWith("JRAL2").size() > 0);
+    }
 }
