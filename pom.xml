@@ -6,11 +6,11 @@
 
   <groupId>geco</groupId>
   <artifactId>login-generator</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 
   <name>login-generator</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>g
+  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
