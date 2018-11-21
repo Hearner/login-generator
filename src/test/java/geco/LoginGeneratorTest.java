@@ -31,4 +31,16 @@ public class LoginGeneratorTest {
         assertTrue("The new JRAL2 should be added into the login list",
                 loginGenerator.getloginService().findAllLoginsStartingWith("JRAL2").size() > 0);
     }
+
+    @Test
+    public void generateLoginFromNomAndPrenomLessThanThreeCharName() {
+        LoginService loginService = new LoginService(new String[] {"JROL",
+                "BPER", "CGUR", "JDU", "JRAL", "JRAL1"});
+        LoginGenerator loginGenerator = new LoginGenerator(loginService);
+
+        assertTrue("Paul Du should return PDU",
+                loginGenerator.generateLoginForNomAndPrenom("Du", "Paul").equals("PDU"));
+        assertTrue("The new PDU should be added into the login list",
+                loginGenerator.getloginService().findAllLoginsStartingWith("PDU").size() > 0);
+    }
 }
