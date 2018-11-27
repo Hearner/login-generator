@@ -2,13 +2,13 @@ package geco;
 
 import java.util.Random;
 
-public class PasswordGeneration {
+public class PasswordGenerator {
 
     /**
      * Generate a 8 caracter long random numbers password.
      * @return the random password
      */
-    private String getRandomPassword() {
+    public String getRandomPassword() {
         String password = new String();
         Random r = new Random();
         char c;
